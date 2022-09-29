@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100vh;
+  background: url("../public/media/linen.png");
+  overflow: hidden;
 }
 
 a {
@@ -13,6 +16,33 @@ a {
 
 * {
   box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 4px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 169, 169);
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    overflow-y: scroll;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

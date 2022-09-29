@@ -1,3 +1,263 @@
-const Book = () => {
-    rect
-}
+
+  .book {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    transition: transform 1s;
+  }
+  
+  .paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+  }
+  .paper1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 1s;
+    background: url("/media/handmadepaper.png");
+  }
+  
+  .front {
+    z-index: 1;
+    backface-visibility: hidden;
+    // border-left: 3px solid powderblue;
+  }
+  
+  .back {
+    z-index: 0;
+  }
+  
+  .front-content,
+  .backContent {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .backContent {
+    transform: rotateY(180deg);
+  }
+  
+  .flipped .front,
+  .flipped .back {
+    transform: rotateY(-180deg);
+  }
+  
+  .front1,
+  .back1 {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: right;
+    transition: transform 1s;
+    background: url("/media/handmadepaper.png");
+  }
+  
+  .front1 {
+    z-index: 1;
+    backface-visibility: hidden;
+    // anishtan
+    // border-left: 13px solid red;
+  }
+  
+  .back1 {
+    z-index: 0;
+    box-shadow: -3px 0 12px -8px rgb(0 0 0 / 40%);
+    box-shadow: 2px 0 7px -5px rgb(0 0 0 / 40%), -4px 0 10px -8px rgb(0 0 0 / 40%);
+  }
+  
+  .front1-content,
+  .back1Content {
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  .flipped .front1,
+  .flipped .back1 {
+    transform: rotateY(180deg);
+  }
+  
+  .flipped1 .front1,
+  .flipped1 .back1 {
+    transform: rotateY(180deg);
+  }
+  
+  
+  
+  
+  
+  
+  .buttons {
+    padding-top: 50px;
+    padding-right: 80px;
+  }
+  
+  .mainBookSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .intro {
+    display: flex;
+    flex-direction: column;
+    grid-area: 40px;
+    padding-top: 50px;
+    padding-left: 20px;
+  }
+  
+  .desTitle {
+    color: #E65F78;
+    font-weight: bold;
+    font-family: 'Raleway';
+    text-shadow: rgb(0 0 0 / 40%) 1px 1px 0, rgb(0 0 0 / 40%) 2px 1px 0;
+    font-size: 20px;
+  }
+  
+  .subDesTitle {
+    font-family: 'Raleway';
+    font-size: 20px;
+    padding-bottom: 16px;
+  }
+  
+  .openPage {
+    width: 40px;
+    height: 40px;
+    background: #FF4A57;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    color: #630f0f;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .openPage::before {
+    border-right-width: 24px !important;
+    cursor: pointer;
+    border-left-color: transparent !important;
+    content: '';
+    position: absolute;
+    display: block;
+    right: 40px;
+    border: 20px solid #FF4A57;
+    z-index: -1;
+  }
+  
+  .openPage:hover {
+    width: 56px;
+    transform: scaleX(1.1);
+    font-size: 14px !important;
+  }
+  
+  
+  .nameTitle {
+    padding-top: 20px;
+    font-size: 50px;
+    text-shadow: #253e45 -1px 1px 0, #253e45 -2px 2px 0, #E65F78 -3px 3px 0, #E65F78 -4px 4px 0;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: 'Alfa Slab One';
+  }
+  
+  .info {
+    padding-top: 2px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    text-shadow: rgb(0 0 0 / 40%) 1px 1px 0, rgb(0 0 0 / 40%) 2px 2px 0;
+    font-family: 'Nixie One';
+    line-height: 1.2;
+    letter-spacing: 1px;
+  }
+  
+  .description {
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .background {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background: url("/media/cover-2.jpg");
+    box-shadow: -8px 0 30px -8px rgb(0 0 0 / 40%);
+  
+  }
+  .mainBackground {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background: url("/media/cover.jpg");
+    box-shadow: -8px 0 30px -8px rgb(0 0 0 / 40%);
+  }
+  
+  .nextButton {
+    margin-left: 100px;
+  }
+  .nextPageAnish {
+    position: absolute;
+    top: 50%;
+    left: 92%;
+  }
+  
+  
+  
+  @media screen and (max-width: 991px) {
+
+    .book {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // https://themes.pixelwars.org/bookcard/images/site/cover.jpg
+  // https://themes.pixelwars.org/bookcard/images/site/cover-2.jpg
+  // https://themes.pixelwars.org/bookcard/images/bckg/body-bg/linen.png
+  // https://themes.pixelwars.org/bookcard/images/bckg/paper-bg/handmadepaper.png
