@@ -1,5 +1,6 @@
 import classes from "./book.module.scss";
 import { useState, useEffect } from "react";
+import About from "../about/about";
 
 const Book = () => {
   const [show, setIsShow] = useState(false);
@@ -27,11 +28,11 @@ const Book = () => {
     const book = document.querySelector("#book");
     const paper2 = document.querySelector("#p5");
     book.style.transform = "translateX(0%)";
-    paper2.classList.remove("flipped");
+    paper2.classList.remove(classes.flipped);
     paper2.style.zIndex = 6;
     setTimeout(() => {
       const paper1 = document.querySelector("#p1");
-      paper1.classList.remove("flipped");
+      paper1.classList.remove(classes.flipped);
       paper1.style.zIndex = 7;
     }, 500);
   };
@@ -42,20 +43,20 @@ const Book = () => {
     const paper1 = document.querySelector("#p1");
     const paper2 = document.querySelector("#p5");
     book.style.transform = "translateX(50%)";
-    paper1.classList.add("flipped");
+    paper1.classList.add(classes.flipped);
     paper1.style.zIndex = 3;
     paper2.style.zIndex = 2;
     setTimeout(() => {
       const book = document.querySelector("#book");
       const paper2 = document.querySelector("#p5");
       book.style.transform = "translateX(0%)";
-      paper2.classList.add("flipped");
+      paper2.classList.add(classes.flipped);
       paper2.style.zIndex = 2;
     }, 500);
-    setTimeout(() => {
-      const paper10 = document.querySelector(".jasem");
-      paper10.style.zIndex = 10;
-    }, 900);
+    // setTimeout(() => {
+    //   const paper10 = document.querySelector(".jasem");
+    //   paper10.style.zIndex = 10;
+    // }, 900);
   };
 
   return (
@@ -105,6 +106,7 @@ const Book = () => {
                   overflowY: "scroll",
                 }}
               >
+                <About />
                 {/* <About /> */}
               </div>
             </div>
