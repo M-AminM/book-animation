@@ -42,7 +42,7 @@ const About = () => {
         className="d-flex justify-content-center align-items-center"
         style={{ paddingTop: "40px" }}
       >
-        <div className={classes.aboutBox}>
+        <div className="main-title-box">
           <p className="d-flex justify-content-center align-items-center">
             ABOUT
           </p>
@@ -54,7 +54,7 @@ const About = () => {
         working, and I would like to reach my highest level in programming.
       </p>
       <div className="d-flex justify-content-center align-items-center">
-        <div className={classes.titleBox}>EDUCATION</div>
+        <div className="dash-title">EDUCATION</div>
       </div>
 
       <div className={`${classes.yearBox} d-flex`}>
@@ -74,7 +74,7 @@ const About = () => {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <div className={classes.titleBox}>DEVELOPMENT SKILLS</div>
+        <div className="dash-title">DEVELOPMENT SKILLS</div>
       </div>
       <div>
         {skills.map((skill) => (
@@ -86,7 +86,7 @@ const About = () => {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <div className={classes.titleBox}>TESTIMONIALS</div>
+        <div className="dash-title">TESTIMONIALS</div>
       </div>
 
       <div className="d-flex flex-column" style={{ paddingTop: "20px" }}>
@@ -104,7 +104,7 @@ const About = () => {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <div className={classes.titleBox}>SERVICES</div>
+        <div className="dash-title">SERVICES</div>
       </div>
 
       <div className={`${classes.services} d-flex justify-content-center align-items-center flex-column`}>

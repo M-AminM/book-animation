@@ -103,6 +103,35 @@
     transform: rotateY(180deg);
   }
   
+
+  .close {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.close::before {
+    border-right-width: 24px !important;
+    cursor: pointer;
+    border-left-color: transparent !important;
+    content: '';
+    position: absolute;
+    display: block;
+    right: 40px;
+    border: 20px solid #333;
+    z-index: -1;
+}
   
   
   

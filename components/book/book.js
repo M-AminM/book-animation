@@ -1,6 +1,8 @@
 import classes from "./book.module.scss";
 import { useState, useEffect } from "react";
 import About from "../about/about";
+import Contact from "../contact/contact";
+import Images from "../images/images";
 
 const Book = () => {
   const [show, setIsShow] = useState(false);
@@ -22,7 +24,7 @@ const Book = () => {
   const [flipPage, setFlipPage] = useState(false);
 
   const closeHanlder = () => {
-    const paper10 = document.querySelector(".jasem");
+    const paper10 = document.querySelector("#paper10");
     paper10.style.zIndex = 0;
 
     const book = document.querySelector("#book");
@@ -42,6 +44,7 @@ const Book = () => {
     const book = document.querySelector("#book");
     const paper1 = document.querySelector("#p1");
     const paper2 = document.querySelector("#p5");
+    const paper10 = document.querySelector("#paper10");
     book.style.transform = "translateX(50%)";
     paper1.classList.add(classes.flipped);
     paper1.style.zIndex = 3;
@@ -53,10 +56,10 @@ const Book = () => {
       paper2.classList.add(classes.flipped);
       paper2.style.zIndex = 2;
     }, 500);
-    // setTimeout(() => {
-    //   const paper10 = document.querySelector(".jasem");
-    //   paper10.style.zIndex = 10;
-    // }, 900);
+    setTimeout(() => {
+      
+      paper10.style.zIndex = 10;
+    }, 900);
   };
 
   return (
@@ -144,10 +147,11 @@ const Book = () => {
                   </svg>
                 </div>
                 {/* <Contact /> */}
+                <Contact />
               </div>
             </div>
           </div>
-          <div className={`${classes.back1} ${classes.jasem}`} style={{ zIndex: 0 }}>
+          <div id="paper10" className={`${classes.back1} ${classes.jasem}`} style={{ zIndex: 0 }}>
             <div
               id="b1"
               className={classes.back1Content}
@@ -156,6 +160,7 @@ const Book = () => {
                 overflowY: "scroll",
               }}
             >
+              <Images />
               {/* <Skill /> */}
             </div>
           </div>

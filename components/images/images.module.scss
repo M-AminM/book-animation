@@ -1,0 +1,46 @@
+.skill {
+    padding-right: 25px;
+    padding-left: 25px;
+    background: url("/media/handmadepaper.png");
+    padding-bottom: 30px;
+}
+
+
+
+.mediaBox {
+    box-sizing: border-box;
+    padding: 4px;
+    margin-top: 20px;
+    // margin-bottom: 40px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    gap: 30px;
+}
+.mediaImage {
+    width: 47%;
+    -webkit-box-shadow: 1px 1px 1px #d1d1d1;
+    box-shadow: 1px 1px 1px #d1d1d1;
+    -webkit-box-shadow: 0 0 10px #555;
+    -ms-box-shadow: 0 0 10px #555;
+    -o-box-shadow: 0 0 10px #555;
+    filter: grayscale(50%);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.mediaImage:hover {
+    filter: grayscale(0%);
+}
+
+.imageTitle {
+    color: #222;
+    margin: 12px 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    
+    
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 10px;
+    
+}

@@ -6,45 +6,12 @@
     background: url("/media/handmadepaper.png");
 }
 
-.aboutBox {
-    background: #333333;
-    font-weight: 800;
-    font-size: 1.5em;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 40px;
-    border-radius: 4px;
-    font-family: "Arvo", serif;
-    
-}
-.aboutBox::before {
-    content: "";
-    position: absolute;
-    top: 10%;
-    left: 0;
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    z-index: -1;
-}
 .aboutInfo {
     padding-top: 20px;
     text-align: justify;
     margin-bottom: 0!important;
 }
-.titleBox {
-    border: 1px dashed #ccc;
-    padding: 0.2em 1em;
-    font-size: 1.0em;
-    font-weight: 800;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 1px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
+
 .yearBox {
     padding-bottom: 30px;
 
