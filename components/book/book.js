@@ -1,10 +1,11 @@
 import classes from "./book.module.scss";
 import { useState } from "react";
 // import About from "../about/about";
-import Contact from "../contact/contact";
-import Images from "../images/images";
+// import Contact from "../contact/contact";
+// import Images from "../images/images";
 import About from "../../pages/about";
-import { isLower991 } from "../useWidth";
+import Contact from "../../pages/contact";
+import Images from "../../pages/images";
 import Cover from "../cover/cover";
 
 const Book = () => {
@@ -47,8 +48,6 @@ const Book = () => {
     }, 900);
   };
 
-  const show = isLower991();
-  console.log(show);
 
   return (
     <>
@@ -159,14 +158,13 @@ const Book = () => {
                 }}
               >
                 <Images />
-                {/* <Skill /> */}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={classes.fuck}>
+      <div className={classes.mobileCover}>
         <Cover />
       </div>
 

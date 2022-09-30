@@ -1,7 +1,5 @@
 import classes from "./images.module.scss";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { isLower991 } from "../useWidth";
+
 
 const Images = () => {
 

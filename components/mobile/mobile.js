@@ -6,7 +6,6 @@ const Mobile = ({ children }) => {
   const router = useRouter();
   console.log(router.pathname);
   return (
-
         <Fragment>
           <MainHeader />
           <main>{children}</main>
