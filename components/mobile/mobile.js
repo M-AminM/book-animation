@@ -1,10 +1,21 @@
-import classes from "./mobile.module.scss";
+import { useRouter } from "next/router";
+import { Fragment } from "react";
+import MainHeader from "./main-header";
 
-const Mobile = () => {
-    return(
-        <div>
-            Mobile
-        </div>
-    )
-}
+const Mobile = ({ children }) => {
+  const router = useRouter();
+  console.log(router.pathname);
+  return (
+    <>
+      {router.pathname === "/" ? (
+        <main>{children}</main>
+      ) : (
+        <Fragment>
+          <MainHeader />
+          <main>{children}</main>
+        </Fragment>
+      )}
+    </>
+  );
+};
 export default Mobile;

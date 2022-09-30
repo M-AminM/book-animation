@@ -1,4 +1,7 @@
 import classes from "./contact.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faTelegram, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
     
@@ -24,11 +27,11 @@ const Contact = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center" style={{ gap: "10px" }}>
-        <div className={classes.socialCircle}></div>
-        <div className={classes.socialCircle}></div>
-        <div className={classes.socialCircle}></div>
-        <div className={classes.socialCircle}></div>
-        <div className={classes.socialCircle}></div>
+        <div className={classes.socialCircle}><FontAwesomeIcon icon={faGithub}/></div>
+        <div className={classes.socialCircle}><FontAwesomeIcon icon={faTelegram}/></div>
+        <div className={classes.socialCircle}><FontAwesomeIcon icon={faEnvelope}/></div>
+        <div className={classes.socialCircle}><FontAwesomeIcon icon={faInstagram}/></div>
+        <div className={classes.socialCircle}><FontAwesomeIcon icon={faLinkedin}/></div>
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="dash-title">DROP ME A LINE!</div>
