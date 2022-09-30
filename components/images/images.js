@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { isLower991 } from "../useWidth";
 
 const Images = () => {
-  const lower = isLower991();
 
   return (
     <>

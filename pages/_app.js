@@ -1,6 +1,5 @@
 import Mobile from "../components/mobile/mobile";
 import "../styles/globals.css";
-import { useState, useEffect } from "react";
 import { isLower991 } from "../components/useWidth";
 
 function MyApp({ Component, pageProps }) {

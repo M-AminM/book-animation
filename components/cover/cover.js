@@ -2,6 +2,7 @@ import Link from "next/link";
 import classes from "../book/book.module.scss";
 
 const Cover = () => {
+  
   return (
     <div id="p1" className={classes.paper} style={{ zIndex: "1" }}>
       <div className={`${classes.front} ${classes.mainBackground}`}>

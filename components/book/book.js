@@ -1,14 +1,13 @@
 import classes from "./book.module.scss";
-import { useState, useEffect } from "react";
-import About from "../about/about";
+import { useState } from "react";
+// import About from "../about/about";
 import Contact from "../contact/contact";
 import Images from "../images/images";
-import Cover from "../cover/cover";
+import About from "../../pages/about";
 import { isLower991 } from "../useWidth";
+import Cover from "../cover/cover";
 
 const Book = () => {
-  const lower = isLower991();
-
   const [flipPage, setFlipPage] = useState(false);
 
   const closeHanlder = () => {
@@ -48,126 +47,129 @@ const Book = () => {
     }, 900);
   };
 
+  const show = isLower991();
+  console.log(show);
+
   return (
     <>
-      {!lower ? (
         <div className={classes.mainBookSection}>
-          <div>
-            <div id="book" className={classes.book}>
-              <div id="p1" className={classes.paper} style={{ zIndex: "1" }}>
-                <div className={`${classes.front} ${classes.mainBackground}`}>
+        <div>
+          <div id="book" className={classes.book}>
+            <div id="p1" className={classes.paper} style={{ zIndex: "1" }}>
+              <div className={`${classes.front} ${classes.mainBackground}`}>
+                <div>
                   <div>
-                    <div>
-                      <p className={classes.nameTitle}>Amin Asgharnejad</p>
-                      <p className={classes.info}>Front End Developer</p>
-                    </div>
-
-                    <div className="d-flex justify-content-center align-items-center">
-                      <div className={classes.intro}>
-                        <div className={classes.description}>
-                          <h3 className={classes.desTitle}>I AM FROM</h3>
-                          <h4 className={classes.subDesTitle}>Earth</h4>
-                        </div>
-                        <div className={classes.description}>
-                          <h3 className={classes.desTitle}>I CREATE </h3>
-                          <h4 className={classes.subDesTitle}>
-                            React Websites
-                          </h4>
-                        </div>
-                        <div className={classes.description}>
-                          <h3 className={classes.desTitle}>I LIKE</h3>
-                          <h4 className={classes.subDesTitle}>Front End</h4>
-                        </div>
-                        <div className={classes.description}>
-                          <h3 className={classes.desTitle}>FREELANCE</h3>
-                          <h4 className={classes.subDesTitle}>Available</h4>
-                        </div>
-                      </div>
-                      <div onClick={goNextPage} className={classes.openPage}>
-                        OPEN
-                      </div>
-                    </div>
+                    <p className={classes.nameTitle}>Amin Asgharnejad</p>
+                    <p className={classes.info}>Front End Developer</p>
                   </div>
-                </div>
-                <div className={classes.back}>
-                  <div
-                    id="b1"
-                    className={`${classes.scroll} ${classes.backContent}`}
-                    style={{
-                      transform: " rotateY(180deg)",
-                      boxShadow: "2px 4px 4px rgb(0 0 0 / 20%)",
-                      overflowY: "scroll",
-                    }}
-                  >
-                    <About />
-                    {/* <About /> */}
+
+                  <div className="d-flex justify-content-center align-items-center">
+                    <div className={classes.intro}>
+                      <div className={classes.description}>
+                        <h3 className={classes.desTitle}>I AM FROM</h3>
+                        <h4 className={classes.subDesTitle}>Earth</h4>
+                      </div>
+                      <div className={classes.description}>
+                        <h3 className={classes.desTitle}>I CREATE </h3>
+                        <h4 className={classes.subDesTitle}>
+                          React Websites
+                        </h4>
+                      </div>
+                      <div className={classes.description}>
+                        <h3 className={classes.desTitle}>I LIKE</h3>
+                        <h4 className={classes.subDesTitle}>Front End</h4>
+                      </div>
+                      <div className={classes.description}>
+                        <h3 className={classes.desTitle}>FREELANCE</h3>
+                        <h4 className={classes.subDesTitle}>Available</h4>
+                      </div>
+                    </div>
+                    <div onClick={goNextPage} className={classes.openPage}>
+                      OPEN
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div
-                id="p5"
-                className={`${classes.paper1} ${flipPage ? "" : "d-none"}`}
-              >
-                <div className={`${classes.front1} ${classes.background}`}>
-                  <div className={classes.nextPageAnish}>
-                    <div className={classes.openPage}>OPEN</div>
-                  </div>
-                </div>
-                <div className={classes.back1}>
-                  <div
-                    id="b1"
-                    className={classes.backContent}
-                    style={{
-                      boxShadow: "-2px 4px 4px rgb(0 0 0 / 20%)",
-                      overflowY: "scroll",
-                    }}
-                  >
-                    <div className={classes.close} onClick={closeHanlder}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </div>
-                    {/* <Contact /> */}
-                    <Contact />
-                  </div>
-                </div>
-              </div>
-              <div
-                id="paper10"
-                className={`${classes.back1} ${classes.jasem}`}
-                style={{ zIndex: 0 }}
-              >
+              <div className={classes.back}>
                 <div
                   id="b1"
-                  className={classes.back1Content}
+                  className={`${classes.scroll} ${classes.backContent}`}
                   style={{
-                    boxShadow: "0 6px 4px -2px rgb(0 0 0 / 20%)",
+                    transform: " rotateY(180deg)",
+                    boxShadow: "2px 4px 4px rgb(0 0 0 / 20%)",
                     overflowY: "scroll",
                   }}
                 >
-                  <Images />
-                  {/* <Skill /> */}
+                  <About />
+                  {/* <About /> */}
                 </div>
+              </div>
+            </div>
+
+            <div
+              id="p5"
+              className={`${classes.paper1} ${flipPage ? "" : "d-none"}`}
+            >
+              <div className={`${classes.front1} ${classes.background}`}>
+                <div className={classes.nextPageAnish}>
+                  <div className={classes.openPage}>OPEN</div>
+                </div>
+              </div>
+              <div className={classes.back1}>
+                <div
+                  id="b1"
+                  className={classes.backContent}
+                  style={{
+                    boxShadow: "-2px 4px 4px rgb(0 0 0 / 20%)",
+                    overflowY: "scroll",
+                  }}
+                >
+                  <div className={classes.close} onClick={closeHanlder}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </div>
+                  {/* <Contact /> */}
+                  <Contact />
+                </div>
+              </div>
+            </div>
+            <div
+              id="paper10"
+              className={`${classes.back1} ${classes.jasem}`}
+              style={{ zIndex: 0 }}
+            >
+              <div
+                id="b1"
+                className={classes.back1Content}
+                style={{
+                  boxShadow: "0 6px 4px -2px rgb(0 0 0 / 20%)",
+                  overflowY: "scroll",
+                }}
+              >
+                <Images />
+                {/* <Skill /> */}
               </div>
             </div>
           </div>
         </div>
-      ) : (
-        // <Mobile />
+      </div>
+
+      <div className={classes.fuck}>
         <Cover />
-      )}
+      </div>
+
     </>
   );
 };

@@ -265,10 +265,20 @@
   
   
   @media screen and (max-width: 991px) {
+    .mainBookSection {
+      display: none;
+    }
 
     .book {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+
+    .fuck {
+      display: none;
     }
   }
   

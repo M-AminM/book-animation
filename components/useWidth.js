@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export const useWidth = () => {
-    const [width, setWidth] = useState(0); // default width, detect on server.
+    const [width, setWidth] = useState(); // default width, detect on server.
     const handleResize = () => setWidth(window.innerWidth);
     useEffect(() => {
       window.addEventListener("resize", handleResize);
