@@ -1,7 +1,32 @@
 import classes from "./images.module.scss";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 
 const Images = () => {
+
+    const [width, setWidth] = useState();
+
+    useEffect(() => {
+      const width = window.innerWidth;
+      setWidth(width);
+    }, []);
+    useEffect(() => {
+      window.addEventListener("resize", () => {
+        const width = window.innerWidth;
+        setWidth(width);
+      });
+      window.addEventListener("load", () => {
+        const width = window.innerWidth;
+        setWidth(width);
+      });
+    })
+    const router = useRouter();
+      useEffect(() => {
+        if(width > 992) {
+          router.replace("/");
+        }
+      }, [width])
 
   return (
     <>

@@ -2,12 +2,37 @@ import classes from "./contact.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTelegram, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Contact = () => {
     
   const submitHandler = (e) => {
     e.preventDefault();
   };
+
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    const width = window.innerWidth;
+    setWidth(width);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      const width = window.innerWidth;
+      setWidth(width);
+    });
+    window.addEventListener("load", () => {
+      const width = window.innerWidth;
+      setWidth(width);
+    });
+  })
+  const router = useRouter();
+    useEffect(() => {
+      if(width > 992) {
+        router.replace("/");
+      }
+    }, [width])
 
   return (
     <section className={classes.contact}>
@@ -46,7 +71,7 @@ const Contact = () => {
         </div>
 
         <div className={classes.stamp}>
-          <img src="https://themes.pixelwars.org/bookcard/images/site/stamp-image.png" />
+          <img src="/media/stamp-image.png" />
         </div>
       </div>
 

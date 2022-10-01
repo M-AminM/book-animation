@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { isLower991, useWidth } from "../../components/useWidth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptop } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +16,28 @@ const About = () => {
   //   }
   // }, [width]);
 
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    const width = window.innerWidth;
+    setWidth(width);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      const width = window.innerWidth;
+      setWidth(width);
+    });
+    window.addEventListener("load", () => {
+      const width = window.innerWidth;
+      setWidth(width);
+    });
+  })
+  const router = useRouter();
+    useEffect(() => {
+      if(width > 992) {
+        router.replace("/");
+      }
+    }, [width])
   const skills = [
     { name: "react", percent: "90%", id: 1 },
     { name: "nextjs", percent: "60%", id: 2 },
