@@ -1,12 +1,11 @@
 import classes from "./book.module.scss";
 import { useState } from "react";
-// import About from "../about/about";
-// import Contact from "../contact/contact";
-// import Images from "../images/images";
 import About from "../../pages/about";
 import Contact from "../../pages/contact";
 import Images from "../../pages/images";
 import Cover from "../cover/cover";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Book = () => {
   const [flipPage, setFlipPage] = useState(false);
@@ -83,8 +82,10 @@ const Book = () => {
                         <h4 className={classes.subDesTitle}>Available</h4>
                       </div>
                     </div>
-                    <div onClick={goNextPage} className={classes.openPage}>
-                      OPEN
+                    <div onClick={goNextPage} className={`${classes.openPage} d-flex flex-column`}>
+                      <span className={classes.firstLine}></span>
+                      <strong >OPEN</strong>
+                      <span className={classes.firstLine}></span>
                     </div>
                   </div>
                 </div>
@@ -92,7 +93,7 @@ const Book = () => {
               <div className={classes.back}>
                 <div
                   id="b1"
-                  className={`${classes.scroll} ${classes.backContent}`}
+                  className={`${classes.scroll} ${classes.backContent} ${classes.scroll}`}
                   style={{
                     transform: " rotateY(180deg)",
                     boxShadow: "2px 4px 4px rgb(0 0 0 / 20%)",
@@ -100,7 +101,6 @@ const Book = () => {
                   }}
                 >
                   <About />
-                  {/* <About /> */}
                 </div>
               </div>
             </div>
@@ -110,36 +110,19 @@ const Book = () => {
               className={`${classes.paper1} ${flipPage ? "" : "d-none"}`}
             >
               <div className={`${classes.front1} ${classes.background}`}>
-                <div className={classes.nextPageAnish}>
-                  <div className={classes.openPage}>OPEN</div>
-                </div>
               </div>
               <div className={classes.back1}>
                 <div
                   id="b1"
-                  className={classes.backContent}
+                  className={`${classes.backContent} ${classes.scroll}`}
                   style={{
                     boxShadow: "-2px 4px 4px rgb(0 0 0 / 20%)",
                     overflowY: "scroll",
                   }}
                 >
                   <div className={classes.close} onClick={closeHanlder}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
+                    <FontAwesomeIcon icon={faXmark}/>
                   </div>
-                  {/* <Contact /> */}
                   <Contact />
                 </div>
               </div>
@@ -151,7 +134,7 @@ const Book = () => {
             >
               <div
                 id="b1"
-                className={classes.back1Content}
+                className={`${classes.back1Content} ${classes.scroll}`}
                 style={{
                   boxShadow: "0 6px 4px -2px rgb(0 0 0 / 20%)",
                   overflowY: "scroll",

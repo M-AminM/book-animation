@@ -1,8 +1,7 @@
-import Link from "next/link";
 import classes from "../book/book.module.scss";
+import Link from "next/link";
 
 const Cover = () => {
-  
   return (
     <div id="p1" className={classes.paper} style={{ zIndex: "1" }}>
       <div className={`${classes.front} ${classes.mainBackground}`}>
@@ -11,7 +10,6 @@ const Cover = () => {
             <p className={classes.nameTitle}>Amin Asgharnejad</p>
             <p className={classes.info}>Front End Developer</p>
           </div>
-
           <div className="d-flex justify-content-center align-items-center">
             <div className={classes.intro}>
               <div className={classes.description}>
@@ -32,7 +30,11 @@ const Cover = () => {
               </div>
             </div>
             <Link href="/about">
-              <div className={classes.openPage}>OPEN</div>
+              <div className={`${classes.openPage} d-flex flex-column`}>
+                <span className={classes.firstLine}></span>
+                <strong>OPEN</strong>
+                <span className={classes.firstLine}></span>
+              </div>
             </Link>
           </div>
         </div>

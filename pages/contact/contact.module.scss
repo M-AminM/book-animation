@@ -1,8 +1,17 @@
+@keyframes animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 .contact {
     background: url("/media/handmadepaper.png");
     padding-right: 25px;
     padding-left: 25px;
-    padding-bottom: 70px;
+    padding-bottom: 65px;
 }
 
 .contactTitle {
@@ -20,6 +29,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .5s;
+    
+}
+
+
+
+.github:hover {
+    background: #000;
+    color: #fff;
+    border: none;
+}
+
+.telegram:hover {
+    background: #33A8D9;
+    color: #fff;
+    border: none;
+}
+
+.gmail:hover {
+    background: #EC4134;
+    color: #fff;
+    border: none;
+}
+
+.instagram:hover {
+    
+    background: #CF3A73;
+    color: #fff;
+    border: none;
+}
+
+.linkedin:hover {
+    background: #2868B2;
+    color: #fff;
+    border: none;
 }
 
 .contactLine {
@@ -36,19 +80,25 @@
     color: #C25337;
     font-size: 12px;
     margin-bottom: 0;
+
+
+}
+
+.contactEmail:hover {
+    color: #C25337;
 }
 
 .contactEarth {
-    padding-left: 10px;
+    // padding-left: 10px;
     font-size: 14px;
     margin-bottom: 0;
 }
 
 .contactEarth::before {
     content: "- ";
-    position: absolute;
+    
     color: #333;
-    left: 25px;
+    // left: 1px;
     
 }
 
@@ -93,9 +143,11 @@
     border: 2px solid #345;
     color: #345;
     transition: .5s;
-    position: absolute;
-    right: 25px;
-
+    // position: absolute;
+    // right: 25px;
+    margin-right: 0;
+    margin-left:auto;
+    display:block;
    
 }
 
@@ -133,5 +185,6 @@
 @media screen and (max-width: 991px) {
     .contact {
         padding-top: 40px;
+        animation: animation 1s normal;
     }
 }

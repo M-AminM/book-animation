@@ -1,3 +1,13 @@
+@keyframes animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .skill {
     padding-right: 25px;
     padding-left: 25px;
@@ -43,4 +53,13 @@
 
     padding-bottom: 10px;
     
+}
+
+@media screen and (max-width: 991px) {
+    .mediaBox {
+        gap: 25px;
+    }
+    .skill {
+        animation: animation 1s normal;
+    }
 }

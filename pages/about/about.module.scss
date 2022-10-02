@@ -1,10 +1,23 @@
+@keyframes animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .about {
     padding-right: 25px;
     padding-left: 25px;
     overflow: hidden;
     padding-bottom: 50px;
     background: url("/media/handmadepaper.png");
+    
 }
+
+
 
 .aboutInfo {
     padding-top: 20px;
@@ -122,3 +135,16 @@
     color: #333;
     text-align: center;
 }
+
+@media screen and (max-width: 991px){
+    .yearBox:not(.end) div::before {
+        top: 84px;
+    }
+    .testimonualsInfo {
+        width: 70%;
+    }
+    .about {
+        animation: animation 1s normal;
+    }
+}
+

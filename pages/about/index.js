@@ -4,8 +4,13 @@ import { isLower991, useWidth } from "../../components/useWidth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptop } from "@fortawesome/free-solid-svg-icons";
 import classes from "./about.module.scss";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const [isShown, setIsShown] = useState(false);
+  const { ref: myRef, inView: isInside } = useInView({ threshold: 0.3 });
+
+
   // const lower = isLower991();
   // const width = useWidth();
   // const router = useRouter();
@@ -15,6 +20,10 @@ const About = () => {
   //     router.replace("/");
   //   }
   // }, [width]);
+  console.log(isInside);
+  if(isInside) {
+      
+  }
 
   const [width, setWidth] = useState();
 
@@ -74,7 +83,7 @@ const About = () => {
   ];
 
   return (
-    <section className={classes.about}>
+    <section className={classes.about} ref={myRef}>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ paddingTop: "40px" }}

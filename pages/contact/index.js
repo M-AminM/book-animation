@@ -52,11 +52,27 @@ const Contact = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center" style={{ gap: "10px" }}>
-        <div className={classes.socialCircle}><FontAwesomeIcon icon={faGithub}/></div>
-        <div className={classes.socialCircle}><FontAwesomeIcon icon={faTelegram}/></div>
-        <div className={classes.socialCircle}><FontAwesomeIcon icon={faEnvelope}/></div>
-        <div className={classes.socialCircle}><FontAwesomeIcon icon={faInstagram}/></div>
-        <div className={classes.socialCircle}><FontAwesomeIcon icon={faLinkedin}/></div>
+        {/* <div className={`${classes.socialCircle} ${classes.icon} ${classes.iconFill}`}><FontAwesomeIcon icon={faGithub}/></div>
+        <div className={`${classes.socialCircle} ${classes.icon} ${classes.iconEnter}`}><FontAwesomeIcon icon={faTelegram}/></div>
+        <div className={`${classes.socialCircle} ${classes.icon} ${classes.iconExpand}`}><FontAwesomeIcon icon={faEnvelope}/></div>
+        <div className={`${classes.socialCircle} ${classes.icon} ${classes.iconCollapse}`}><FontAwesomeIcon icon={faInstagram}/></div>
+        <div className={`${classes.socialCircle} ${classes.icon} ${classes.iconRotate}`}><FontAwesomeIcon icon={faLinkedin}/></div> */}
+
+      <a href="https://github.com/M-AminM" className={`${classes.socialCircle} ${classes.github}`}>
+            <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a href="https://www.telegram.me/M_AminMM" className={`${classes.socialCircle} ${classes.telegram}`}>
+            <FontAwesomeIcon icon={faTelegram} />
+        </a>
+        <a href="mailto:aminfarid1234@gmail.com" className={`${classes.socialCircle} ${classes.gmail}`}>
+            <FontAwesomeIcon icon={faEnvelope}/>
+        </a>
+        <a href="https://www.instagram.com/m_aminmm4/" className={`${classes.socialCircle} ${classes.instagram}`}>
+            <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a href="http://www.linkedin.com/in/amin-asgharnejad-a79a27239" className={`${classes.socialCircle} ${classes.linkedin}`}>
+            <FontAwesomeIcon icon={faLinkedin} />
+        </a>
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="dash-title">DROP ME A LINE!</div>
@@ -65,7 +81,7 @@ const Contact = () => {
       <div className="d-flex justify-content-between">
         <div>
           <h4 className={classes.contactName}>Amin Asgharnejad</h4>
-          <p className={classes.contactEmail}>aminfarid1234@gmail.com</p>
+          <a href="mailto:aminfarid1234@gmail.com" className={classes.contactEmail}>aminfarid1234@gmail.com</a>
           <p className={classes.contactEarth}>Planet Earth</p>
           <p className={classes.contactEarth}>+989194075413</p>
         </div>

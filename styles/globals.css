@@ -13,31 +13,27 @@ a {
   color: inherit;
   text-decoration: none;
 }
+a {
+  text-decoration: none;
+}
 
+a:hover {
+  color:#333; 
+  text-decoration:none; 
+  cursor:pointer;  
+}
+/* ::-webkit-scrollbar {
+  display: none;
+} */
 * {
   box-sizing: border-box;
 }
-::-webkit-scrollbar {
-  width: 4px;
 
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(170, 169, 169);
-  border-radius: 7px;
-}
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   background: gray;
-}
+} */
 
 .main-title-box {
   background: #333333;
@@ -164,6 +160,9 @@ a {
   body {
     overflow-y: scroll;
   }
+   ::-webkit-scrollbar {
+  display: none;
+} 
 }
 
 @media (prefers-color-scheme: dark) {
