@@ -1,4 +1,4 @@
-import classes from "./mobile.module.scss";
+import classes from "./header.module.scss";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,30 +11,28 @@ import {
 const MainHeader = () => {
   return (
     <header className={classes.header}>
-      <div className="d-flex">
+      <nav className="d-flex">
         <Link href="/">
-          <div className={classes.headerButton}>
-            <FontAwesomeIcon icon={faAngleLeft}/>
-          </div>
+          <a className={classes.headerButton}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </a>
         </Link>
         <Link href="/about" className={classes.headerButton}>
-          <div className={classes.headerButton}>
+          <a className={classes.headerButton}>
             <FontAwesomeIcon icon={faListAlt} />
-          </div>
+          </a>
         </Link>
         <Link href="/images" className={classes.headerButton}>
-          <div className={classes.headerButton}>
+          <a className={classes.headerButton}>
             <FontAwesomeIcon icon={faImage} />
-          </div>
+          </a>
         </Link>
         <Link href="/contact" className={classes.headerButton}>
-          <div className={classes.headerButton} style={{ border: "none" }}>
-            <div className={classes.headerButton}>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </div>
-          </div>
+          <a className={classes.headerButton} style={{ border: "none" }}>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
         </Link>
-      </div>
+      </nav>
     </header>
   );
 };

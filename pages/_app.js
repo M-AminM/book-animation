@@ -1,11 +1,10 @@
-import Mobile from "../components/mobile/mobile";
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import classes from "../styles/loading.module.scss";
+import Header from "../components/header/header";
 
 function MyApp({ Component, pageProps }) {
   const [show, setIsShow] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -22,31 +21,12 @@ function MyApp({ Component, pageProps }) {
     });
   });
 
-
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 500);
   }, []);
-  const router = useRouter();
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-      const handleStart = (url) => (url !== router.asPath) && setLoading(true);
-      const handleComplete = (url) => (url === router.asPath) && setLoading(false);
-
-      router.events.on('routeChangeStart', handleStart)
-      router.events.on('routeChangeComplete', handleComplete)
-      router.events.on('routeChangeError', handleComplete)
-
-      return () => {
-          router.events.off('routeChangeStart', handleStart)
-          router.events.off('routeChangeComplete', handleComplete)
-          router.events.off('routeChangeError', handleComplete)
-      }
-  })
 
   return (
     <>
@@ -66,9 +46,9 @@ function MyApp({ Component, pageProps }) {
       ) : (
         <>
           {show ? (
-            <Mobile>
+            <Header>
               <Component {...pageProps} />
-            </Mobile>
+            </Header>
           ) : (
             <Component {...pageProps} />
           )}

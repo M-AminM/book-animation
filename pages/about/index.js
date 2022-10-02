@@ -1,31 +1,12 @@
+import classes from "./about.module.scss";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { isLower991, useWidth } from "../../components/useWidth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptop } from "@fortawesome/free-solid-svg-icons";
-import classes from "./about.module.scss";
-import { useInView } from "react-intersection-observer";
 
 const About = () => {
-  const [isShown, setIsShown] = useState(false);
-  const { ref: myRef, inView: isInside } = useInView({ threshold: 0.3 });
-
-
-  // const lower = isLower991();
-  // const width = useWidth();
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   if (lower) {
-  //     router.replace("/");
-  //   }
-  // }, [width]);
-  console.log(isInside);
-  if(isInside) {
-      
-  }
-
   const [width, setWidth] = useState();
+  const router = useRouter();
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -40,13 +21,14 @@ const About = () => {
       const width = window.innerWidth;
       setWidth(width);
     });
-  })
-  const router = useRouter();
-    useEffect(() => {
-      if(width > 992) {
-        router.replace("/");
-      }
-    }, [width])
+  });
+
+  useEffect(() => {
+    if (width > 992) {
+      router.replace("/");
+    }
+  }, [width]);
+
   const skills = [
     { name: "react", percent: "90%", id: 1 },
     { name: "nextjs", percent: "60%", id: 2 },
@@ -83,16 +65,14 @@ const About = () => {
   ];
 
   return (
-    <section className={classes.about} ref={myRef}>
+    <section className={classes.about}>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ paddingTop: "40px" }}
       >
-        <div className="main-title-box">
-          <p className="d-flex justify-content-center align-items-center">
-            ABOUT
-          </p>
-        </div>
+        <h2 className="main-title-box d-flex justify-content-center align-items-center">
+          ABOUT
+        </h2>
       </div>
       <p className={classes.aboutInfo}>
         I am amin asgharnejad, a student of Computer Engineering at guilan
@@ -100,11 +80,11 @@ const About = () => {
         working, and I would like to reach my highest level in programming.
       </p>
       <div className="d-flex justify-content-center align-items-center">
-        <div className="dash-title">EDUCATION</div>
+        <h2 className="dash-title">EDUCATION</h2>
       </div>
 
       <div className={`${classes.yearBox} d-flex`}>
-        <h2 className={classes.year}>2017 - 2020</h2>
+        <h3 className={classes.year}>2017 - 2020</h3>
         <div>
           <p className={classes.university}>Allameh Tabataba'i High School</p>
           <p className={classes.degree}>diploma</p>
@@ -112,7 +92,7 @@ const About = () => {
       </div>
 
       <div className={`${classes.yearBox} ${classes.end} d-flex`}>
-        <h2 className={classes.year}>2020 - 2024</h2>
+        <h3 className={classes.year}>2020 - 2024</h3>
         <div>
           <p className={classes.university}>University of Guilan</p>
           <p className={classes.degree}>
@@ -122,7 +102,7 @@ const About = () => {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <div className="dash-title">DEVELOPMENT SKILLS</div>
+        <h2 className="dash-title">DEVELOPMENT SKILLS</h2>
       </div>
       <div>
         {skills.map((skill) => (
@@ -137,7 +117,7 @@ const About = () => {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <div className="dash-title">TESTIMONIALS</div>
+        <h2 className="dash-title">TESTIMONIALS</h2>
       </div>
 
       <div className="d-flex flex-column" style={{ paddingTop: "20px" }}>
@@ -155,14 +135,14 @@ const About = () => {
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
-        <div className="dash-title">SERVICES</div>
+        <h2 className="dash-title">SERVICES</h2>
       </div>
 
       <div
         className={`${classes.services} d-flex justify-content-center align-items-center flex-column`}
       >
         <FontAwesomeIcon className={classes.laptopIcon} icon={faLaptop} />
-        <h2 className={classes.servicesTitle}>Web Development</h2>
+        <h3 className={classes.servicesTitle}>Web Development</h3>
         <p className={classes.servicesDes}>
           I can develop Web apps. It is a long established fact that a reader
           will be distracted by the readable content.

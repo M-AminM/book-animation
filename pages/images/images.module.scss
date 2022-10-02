@@ -2,7 +2,6 @@
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
@@ -15,17 +14,15 @@
     padding-bottom: 60px;
 }
 
-
-
 .mediaBox {
     box-sizing: border-box;
     padding: 4px;
     margin-top: 20px;
-    // margin-bottom: 40px;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     gap: 30px;
 }
+
 .mediaImage {
     width: 47%;
     -webkit-box-shadow: 1px 1px 1px #d1d1d1;
@@ -47,12 +44,8 @@
     margin: 12px 0 10px;
     font-size: 14px;
     font-weight: 400;
-    
-    
     border-bottom: 1px solid #ddd;
-
     padding-bottom: 10px;
-    
 }
 
 @media screen and (max-width: 991px) {

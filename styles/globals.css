@@ -22,18 +22,10 @@ a:hover {
   text-decoration:none; 
   cursor:pointer;  
 }
-/* ::-webkit-scrollbar {
-  display: none;
-} */
+
 * {
   box-sizing: border-box;
 }
-
-
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: gray;
-} */
 
 .main-title-box {
   background: #333333;
@@ -147,6 +139,7 @@ a:hover {
   top: 56px;
   left: 12px;
 }
+
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);
@@ -162,7 +155,7 @@ a:hover {
   }
    ::-webkit-scrollbar {
   display: none;
-} 
+  } 
 }
 
 @media (prefers-color-scheme: dark) {
