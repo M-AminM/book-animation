@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import Header from "../components/header/header";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }) {
   const [show, setIsShow] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -21,37 +21,16 @@ function MyApp({ Component, pageProps }) {
     });
   });
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 500);
-  }, []);
-
   return (
     <>
-      {loading ? (
-        <div className="loader-container">
-        <div className="lds-roller">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+      <NextNProgress />
+      {show ? (
+        <Header>
+          <Component {...pageProps} />
+        </Header>
       ) : (
         <>
-          {show ? (
-            <Header>
-              <Component {...pageProps} />
-            </Header>
-          ) : (
-            <Component {...pageProps} />
-          )}
+          <Component {...pageProps} />
         </>
       )}
     </>

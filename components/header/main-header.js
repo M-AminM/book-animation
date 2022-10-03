@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const MainHeader = () => {
+  
   return (
     <header className={classes.header}>
       <nav className="d-flex">
@@ -17,17 +18,17 @@ const MainHeader = () => {
             <FontAwesomeIcon icon={faAngleLeft} />
           </a>
         </Link>
-        <Link href="/about" className={classes.headerButton}>
+        <Link href="/about">
           <a className={classes.headerButton}>
             <FontAwesomeIcon icon={faListAlt} />
           </a>
         </Link>
-        <Link href="/images" className={classes.headerButton}>
+        <Link href="/images">
           <a className={classes.headerButton}>
             <FontAwesomeIcon icon={faImage} />
           </a>
         </Link>
-        <Link href="/contact" className={classes.headerButton}>
+        <Link href="/contact">
           <a className={classes.headerButton} style={{ border: "none" }}>
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
