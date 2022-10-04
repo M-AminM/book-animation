@@ -2,7 +2,7 @@ import classes from "./about.module.scss";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptop } from "@fortawesome/free-solid-svg-icons";
+import { faLaptop, faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
   const [width, setWidth] = useState();
@@ -98,6 +98,15 @@ const About = () => {
           <p className={classes.degree}>
             bachelor's degree computer engineering
           </p>
+        </div>
+      </div>
+
+      <div className="d-flex justify-content-center align-items-center">
+        <div className={classes.downloadButton}>
+          <a href="/resume/Mohammad Amin Asgharnejad.pdf" download>
+            {/* <FontAwesomeIcon style={{ width: "40px" }} icon={faDownload} /> */}
+            DOWNLOAD CV
+          </a>
         </div>
       </div>
 

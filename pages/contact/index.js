@@ -14,9 +14,6 @@ const Contact = () => {
   const [width, setWidth] = useState();
   const router = useRouter();
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-  };
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -39,6 +36,30 @@ const Contact = () => {
       router.replace("/");
     }
   }, [width]);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const formData = {};
+    Array.from(e.currentTarget.elements).forEach((element) => {
+      if (!element.name) return;
+      formData[element.name] = element.value;
+    });
+    const results = await fetch("/api/mail", {
+      method: "post",
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      }),
+    });
+    if (results.status == 200) {
+      console.log("success");
+    } else {
+      console.log("error");
+    }
+  };
+
 
   return (
     <section className={classes.contact}>
@@ -148,7 +169,7 @@ const Contact = () => {
           <label htmlFor="message" className={classes.contactLabel}>
             MESSAGE
           </label>
-          <textarea className={classes.inputContact} rows="5" id="message" />
+          <textarea className={classes.inputContact} name="message" rows="5" id="message" />
         </div>
         <button className={classes.sendMessage}>SEND</button>
       </form>
