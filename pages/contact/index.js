@@ -9,11 +9,11 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const [width, setWidth] = useState();
   const router = useRouter();
-
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -37,20 +37,14 @@ const Contact = () => {
     }
   }, [width]);
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    const formData = {};
-    Array.from(e.currentTarget.elements).forEach((element) => {
-      if (!element.name) return;
-      formData[element.name] = element.value;
-    });
+  const onSubmit = async (data) => {
     const results = await fetch("/api/mail", {
       method: "post",
       body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
       }),
     });
     if (results.status == 200) {
@@ -60,6 +54,11 @@ const Contact = () => {
     }
   };
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <section className={classes.contact}>
@@ -126,33 +125,45 @@ const Contact = () => {
         </div>
 
         <div className={classes.stamp}>
-          <img src="/media/stamp-image.png" alt="stamp-image"/>
+          <img src="/media/stamp-image.png" alt="stamp-image" />
         </div>
       </div>
 
-      <form style={{ paddingTop: "40px" }} onSubmit={submitHandler}>
+      <form style={{ paddingTop: "40px" }} onSubmit={handleSubmit(onSubmit)}>
         <div className="d-flex">
           <label htmlFor="name" className={classes.contactLabel}>
             NAME
           </label>
-          <input
-            className={classes.inputContact}
-            name="name"
-            id="name"
-            type="text"
-          />
+          <div className="d-flex flex-column w-100">
+            <input
+              className={classes.inputContact}
+              name="name"
+              id="name"
+              type="text"
+              {...register("name", { required: true })}
+            />
+            {errors.name && (
+              <p className={classes.inputError}>Name is required</p>
+            )}
+          </div>
         </div>
 
         <div className="d-flex">
           <label htmlFor="email" className={classes.contactLabel}>
             EMAIL
           </label>
-          <input
-            className={classes.inputContact}
-            name="email"
-            id="email"
-            type="email"
-          />
+          <div className="d-flex flex-column w-100">
+            <input
+              className={classes.inputContact}
+              name="email"
+              id="email"
+              type="email"
+              {...register("email", { required: true })}
+            />
+            {errors.email && (
+              <p className={classes.inputError}>Invalid email address</p>
+            )}
+          </div>
         </div>
         <div className="d-flex">
           <label htmlFor="subject" className={classes.contactLabel}>
@@ -169,7 +180,18 @@ const Contact = () => {
           <label htmlFor="message" className={classes.contactLabel}>
             MESSAGE
           </label>
-          <textarea className={classes.inputContact} name="message" rows="5" id="message" />
+          <div className="d-flex flex-column w-100">
+            <textarea
+              className={classes.inputContact}
+              name="message"
+              rows="5"
+              id="message"
+              {...register("message", { required: true })}
+            />
+            {errors.message && (
+              <p className={classes.inputError}>Message is required</p>
+            )}
+          </div>
         </div>
         <button className={classes.sendMessage}>SEND</button>
       </form>

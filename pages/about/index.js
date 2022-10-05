@@ -132,7 +132,7 @@ const About = () => {
       <div className="d-flex flex-column" style={{ paddingTop: "20px" }}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="d-flex justify-content-between">
-            <img className={classes.testo} src={testimonial.img} />
+            <img className={classes.testo} src={testimonial.img} alt={testimonial.name}/>
             <div className={classes.testimonualsInfo}>
               <h4 className={classes.testName}>
                 {testimonial.name} <span>{testimonial.skill}</span>
