@@ -51,7 +51,7 @@ const About = () => {
     {
       name: "Walter White",
       skill: "Chemist / Freelancer",
-      des: "He was a great co-worker and a friend. I would't be where i am without his support.",
+      des: "He was a great co-worker and a friend. I would not be where i am without his support.",
       img: "./media/testo-02.jpg",
       id: 2,
     },
@@ -76,7 +76,7 @@ const About = () => {
       </div>
       <p className={classes.aboutInfo}>
         I am amin asgharnejad, a student of Computer Engineering at guilan
-        university I have been interested in programming for 3 years and started
+        university I have been interested in programming for 2 years and started
         working, and I would like to reach my highest level in programming.
       </p>
       <div className="d-flex justify-content-center align-items-center">
@@ -86,7 +86,7 @@ const About = () => {
       <div className={`${classes.yearBox} d-flex`}>
         <h3 className={classes.year}>2017 - 2020</h3>
         <div>
-          <p className={classes.university}>Allameh Tabataba'i High School</p>
+          <p className={classes.university}>Allameh Tabataba&apos;i High School</p>
           <p className={classes.degree}>diploma</p>
         </div>
       </div>
@@ -96,7 +96,7 @@ const About = () => {
         <div>
           <p className={classes.university}>University of Guilan</p>
           <p className={classes.degree}>
-            bachelor's degree computer engineering
+            bachelor&apos;s degree computer engineering
           </p>
         </div>
       </div>

@@ -14,6 +14,13 @@ import { useForm } from "react-hook-form";
 const Contact = () => {
   const [width, setWidth] = useState();
   const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
 
   useEffect(() => {
     const width = window.innerWidth;
@@ -52,13 +59,8 @@ const Contact = () => {
     } else {
       console.log("error");
     }
+    reset();
   };
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   return (
     <section className={classes.contact}>
@@ -140,10 +142,10 @@ const Contact = () => {
               name="name"
               id="name"
               type="text"
-              {...register("name", { required: true })}
+              {...register("name", { minLength: {value: 4, message: "Name has to be greater than 4 characters long"}, required: "Name is required"})}
             />
             {errors.name && (
-              <p className={classes.inputError}>Name is required</p>
+              <p className={classes.inputError}>{errors.name.message}</p>
             )}
           </div>
         </div>
@@ -186,10 +188,10 @@ const Contact = () => {
               name="message"
               rows="5"
               id="message"
-              {...register("message", { required: true })}
+              {...register("message", { minLength: {value: 8, message: "Name has to be greater than 8 characters long"}, required: "Message is required"})}
             />
             {errors.message && (
-              <p className={classes.inputError}>Message is required</p>
+              <p className={classes.inputError}>{errors.message.message}</p>
             )}
           </div>
         </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Cover = () => {
   return (
-    <div id="p1" className={classes.paper} style={{ zIndex: "1" }}>
+    <div id="p1" className={classes.paper} style={{ zIndex: "1", height: '100vh'}}>
       <div className={`${classes.front} ${classes.mainBackground}`}>
         <div>
           <div>

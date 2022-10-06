@@ -147,7 +147,7 @@ const Book = () => {
         </div>
       </div>
 
-      <div className={classes.mobileCover}>
+      <div className={classes.mobileCover} style={{overflow: "hidden"}}>
         <Cover />
       </div>
 
