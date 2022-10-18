@@ -3,7 +3,11 @@ import Link from "next/link";
 
 const Cover = () => {
   return (
-    <div id="p1" className={classes.paper} style={{ zIndex: "1", height: '100vh'}}>
+    <div
+      id="p1"
+      className={classes.paper}
+      style={{ zIndex: "1", height: "100vh" }}
+    >
       <div className={`${classes.front} ${classes.mainBackground}`}>
         <div>
           <div>
@@ -38,6 +42,9 @@ const Cover = () => {
             </Link>
           </div>
         </div>
+        <p className={classes.mobileSideDes}>
+          To saw book 3D animation book go on desktop mode
+        </p>
       </div>
       <div className={classes.back}>
         <div

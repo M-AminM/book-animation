@@ -74,7 +74,7 @@ const Contact = () => {
       </p>
       <div className="d-flex justify-content-center align-items-center">
         <h2 className="dash-title" style={{ marginTop: "15px" }}>
-          LET'S SOCIALIZE
+          LET&apos;S SOCIALIZE
         </h2>
       </div>
       <div className="d-flex justify-content-center" style={{ gap: "10px" }}>
