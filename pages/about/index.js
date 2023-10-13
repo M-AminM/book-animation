@@ -80,30 +80,40 @@ const About = () => {
         working, and I would like to reach my highest level in programming.
       </p>
       <div className="d-flex justify-content-center align-items-center">
-        <h2 className="dash-title">EDUCATION</h2>
+        <h2 className="dash-title">EXPERIENCE</h2>
       </div>
 
       <div className={`${classes.yearBox} d-flex`}>
-        <h3 className={classes.year}>2017 - 2020</h3>
+        <h3 className={classes.year}>2023 - pres</h3>
         <div>
-          <p className={classes.university}>Allameh Tabataba&apos;i High School</p>
-          <p className={classes.degree}>diploma</p>
+          <p className={classes.university}>Golrang (KalaResane Hasti)</p>
+          <p className={classes.degree}>Front-end developer</p>
         </div>
       </div>
 
       <div className={`${classes.yearBox} ${classes.end} d-flex`}>
-        <h3 className={classes.year}>2020 - 2024</h3>
+        <h3 className={classes.year}>2022</h3>
         <div>
-          <p className={classes.university}>University of Guilan</p>
-          <p className={classes.degree}>
-            bachelor&apos;s degree computer engineering
-          </p>
+          <p className={classes.university}>West Asia Scientific Network</p>
+          <p className={classes.degree}>Front-end developer</p>
+        </div>
+      </div>
+
+      <div className="d-flex justify-content-center align-items-center">
+        <h2 className="dash-title">EDUCATION</h2>
+      </div>
+
+      <div className={`d-flex`} style={{ paddingBottom: "30px" }}>
+        <h3 className={classes.year}>2020 - pres</h3>
+        <div>
+          <p className={classes.university}>Azad University, Tehran</p>
+          <p className={classes.degree}>bachelor of computer engineering</p>
         </div>
       </div>
 
       <div className="d-flex justify-content-center align-items-center">
         <div className={classes.downloadButton}>
-          <a href="/resume/Mohammad Amin Asgharnejad.pdf" download>
+          <a href="/resume/Amin Asgharnezhad.pdf" download>
             {/* <FontAwesomeIcon style={{ width: "40px" }} icon={faDownload} /> */}
             DOWNLOAD CV
           </a>
@@ -132,7 +142,11 @@ const About = () => {
       <div className="d-flex flex-column" style={{ paddingTop: "20px" }}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="d-flex justify-content-between">
-            <img className={classes.testo} src={testimonial.img} alt={testimonial.name}/>
+            <img
+              className={classes.testo}
+              src={testimonial.img}
+              alt={testimonial.name}
+            />
             <div className={classes.testimonualsInfo}>
               <h4 className={classes.testName}>
                 {testimonial.name} <span>{testimonial.skill}</span>
